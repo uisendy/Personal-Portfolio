@@ -1,6 +1,6 @@
 .secondary-cursor {
   z-index: 1000;
-  border-radius: 50%;
+  border-radius: 50% 0 50% 50%;
   pointer-events: none;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
@@ -10,22 +10,17 @@
   transition: width 0.25s ease-in-out, height 0.25s ease-in-out;
 }
 .secondary-cursor.regular {
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
 }
 .secondary-cursor.small {
+  width: 150px;
+  height: 150px;
+}
+
+.secondary-cursor {
   width: 60px;
   height: 60px;
-}
-.secondary-cursor {
-  z-index: 10000;
-  pointer-events: none;
-  transform: translate3d(0, 0, 0);
-  position: fixed;
-}
-.secondary-cursor {
-  width: 30px;
-  height: 30px;
 }
 @keyframes fadeIn {
   0% {

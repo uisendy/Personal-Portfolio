@@ -7,7 +7,7 @@ const Menu = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <div className="py-8 px-8 bg-black">
+    <div className="py-8 px-8 bg-black fixed w-[100%]">
       <nav className="flex justify-between">
         <section className="flex">
           <div
@@ -28,7 +28,7 @@ const Menu = () => {
             <div
               onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
             ></div>
-            <ul className="flex flex-col gap-20 justify-between min-h-[250px] w-[80%] text-white text-9xl">
+            <ul className="flex flex-col gap-20 justify-between min-h-[250px] w-[80%] text-white text-7xl md:w-[80%] md:text-9xl">
               <li className="flex">
                 <a
                   className="links flex item-centre hover:italic"

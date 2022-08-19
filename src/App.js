@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <CustomCursor />
-      <div className="bg-black text-white">
+      <div>
         <Navbar />
         <Header />
         <Featured />
