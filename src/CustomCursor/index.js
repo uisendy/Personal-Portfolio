@@ -68,9 +68,7 @@ const CustomCursor = () => {
   }, []);
   return (
     <div className={`cursor-wrapper default`}>
-      <div className="secondary-cursor" ref={secondaryCursor}>
-        {console.log(secondaryCursor)}
-      </div>
+      <div className="secondary-cursor" ref={secondaryCursor}></div>
     </div>
   );
 };
