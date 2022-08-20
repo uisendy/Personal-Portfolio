@@ -2,7 +2,7 @@ import React from "react";
 
 const header = () => {
   return (
-    <div className="h-[100vh] bg-black text-white">
+    <div className="h-[100vh] bg-black text-white w-[100vw]">
       <div className="flex flex-col gap-7 justify-center items-start w-[87%] h-[100%] my-0 mx-auto">
         <h1 className=" text-6xl md:text-9xl font-extrabold">Hello!</h1>
         <p className=" text-6xl md:text-9xl font-light italic">

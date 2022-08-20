@@ -3,11 +3,11 @@ import { useState } from "react";
 import "./style.css";
 import { BsArrowRight } from "react-icons/bs";
 
-const Menu = () => {
+const Menu = ({ menu1, menu2, menu3 }) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <div className="py-8 px-8 bg-black fixed w-[100%]">
+    <div className="py-8 px-8 bg-black fixed w-[100vw]">
       <nav className="flex justify-between">
         <section className="flex">
           <div
@@ -28,13 +28,13 @@ const Menu = () => {
             <div
               onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
             ></div>
-            <ul className="flex flex-col gap-20 justify-between min-h-[250px] w-[80%] text-white text-7xl md:w-[80%] md:text-9xl">
+            <ul className="flex flex-col gap-12 justify-between min-h-[250px] w-[80%] text-white text-7xl md:w-[80%] md:text-[7rem]">
               <li className="flex">
                 <a
                   className="links flex item-centre hover:italic"
                   href="/about"
                 >
-                  About <BsArrowRight className="arrow" />
+                  {menu1} <BsArrowRight className="arrow" />
                 </a>
               </li>
               <li className="flex">
@@ -42,7 +42,7 @@ const Menu = () => {
                   className="links flex item-centre hover:italic"
                   href="/portfolio"
                 >
-                  Portfolio <BsArrowRight className="arrow" />
+                  {menu2} <BsArrowRight className="arrow" />
                 </a>
               </li>
               <li className="flex">
@@ -50,7 +50,7 @@ const Menu = () => {
                   className="links flex item-centre hover:italic"
                   href="/contact"
                 >
-                  Contact <BsArrowRight className="arrow" />
+                  {menu3} <BsArrowRight className="arrow" />
                 </a>
               </li>
             </ul>
@@ -64,11 +64,11 @@ const Menu = () => {
             S<span className="italic">i:</span>{" "}
           </a>
         </div>
-        <div className="contact hidden items-center gap-2 z-[40]  pr-2 text-white font-playFairSc text-2xl md:flex md:text-4xl md:pr-10 md:relative">
+        <div className="contact hidden items-center gap-2 z-[40] text-white font-playFairSc text-xl md:flex md:text-3xl md:pr-10 md:relative">
           <a className="" href="/contact">
             CONTACT
           </a>
-          <BsArrowRight className="arrow" />
+          <BsArrowRight className="" />
         </div>
       </nav>
     </div>

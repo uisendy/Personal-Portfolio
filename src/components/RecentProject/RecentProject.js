@@ -1,7 +1,12 @@
 import React from "react";
+import SectionHeader from "../SectionHeader/SectionHeader";
 
-const RecentProjec = () => {
-  return <div>RecentProjec</div>;
+const RecentProject = () => {
+  return (
+    <section className="bg-black text-white w-[100%] h-[70vh]">
+      <SectionHeader title={"Projects"} />
+    </section>
+  );
 };
 
-export default RecentProjec;
+export default RecentProject;

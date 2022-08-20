@@ -8,5 +8,5 @@ module.exports = {
       playFairSc: ["Playfair Display SC"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
