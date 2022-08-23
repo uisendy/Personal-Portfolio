@@ -6,6 +6,7 @@ module.exports = {
     fontFamily: {
       aboreto: ["Aboreto"],
       playFairSc: ["Playfair Display SC"],
+      ubuntu: ["Ubuntu"],
     },
   },
   plugins: [require("@tailwindcss/forms")],
