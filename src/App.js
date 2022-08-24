@@ -14,7 +14,7 @@ function App() {
         <Header />
         <Featured />
         {/* <About /> */}
-        <RecentProject />
+        {/* <RecentProject /> */}
         <Footer />
       </div>
     </>

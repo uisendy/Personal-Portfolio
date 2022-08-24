@@ -7,8 +7,11 @@ import ProjectList from "./ProjectList";
 const Featured = () => {
   const [activeImage, setActiveImage] = useState(1);
   return (
-    <section className=" text-white bg-red-400 ">
-      <SectionHeader title={"My Portfolio"} />
+    <section className=" text-white bg-black">
+      <SectionHeader
+        title={"Recent Projects"}
+        subtitle={"You can go through my recently completed projects"}
+      />
 
       {/* <div className="grid grid-cols-4 gap-3">
         <p className="font-ubuntu font-thin text-xl pt-6 text-gray-500">

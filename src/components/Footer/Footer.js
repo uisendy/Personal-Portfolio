@@ -1,9 +1,16 @@
 import React from "react";
+import { BsArrowRight } from "react-icons/bs";
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaTwitter,
+  FaFileDownload,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer class="bg-black">
-      <div class="max-w-screen-xl px-4 pt-16 pb-8 mx-auto sm:px-6 lg:px-8">
+    <footer class="bg-black text-white h-[100vh]">
+      {/* <div class="max-w-screen-xl px-4 pt-16 pb-8 mx-auto sm:px-6 lg:px-8">
         <div class="max-w-md mx-auto">
           <strong class="block text-xl font-medium text-center text-white sm:text-3xl">
             Would you Want me to email you with the latest working project?
@@ -17,7 +24,7 @@ const Footer = () => {
               </label>
 
               <input
-                class="w-full p-4 pr-16 text-sm font-medium bg-white border-none rounded-full"
+                class="w-full py-4 pr-16 text-sm font-medium bg-white border-none rounded-full"
                 id="email"
                 type="email"
                 placeholder="email@address.ext"
@@ -184,6 +191,63 @@ const Footer = () => {
               Laravel Livewire
             </a>
             .
+          </p>
+        </div>
+      </div> */}
+      <div className="footer-container md:grid md:grid-cols-2 w-[87%] mx-auto h-[100%] py-20">
+        <div className="pb-12">
+          <h2 className="text-4xl text-center pb-12">
+            You have a project in mind ? Let's discuss it together!
+          </h2>
+          <a
+            className="flex flex-col justify-center text-center text-2xl"
+            href="mailto:ini.e.sendy@gmail.com"
+          >
+            ini.e.sendy@gmail.com
+            <div className=" w-[250px] pb-2 mx-auto border-b-[3px] " />
+          </a>
+        </div>
+        <div className="flex flex-wrap">
+          <a
+            className="transition hover:opacity-75 hover:line-through w-[50%] border-[1px] flex items-center justify-center py-12"
+            href="http://github.com/uisendy"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaGithub className="text-4xl text-white" />
+          </a>
+          <a
+            className="transition hover:opacity-75 hover:line-through w-[50%] border-[1px] flex items-center justify-center py-12"
+            href="https://www.linkedin.com/in/inieke-sendy-129b57ab/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaLinkedinIn className="text-4xl text-white" />
+          </a>
+          <a
+            className="transition hover:opacity-75 hover:line-through w-[50%] border-[1px] flex items-center justify-center py-12"
+            href="https://www.linkedin.com/in/inieke-sendy-129b57ab/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaTwitter className="text-4xl text-white" />
+          </a>
+
+          <a
+            className="transition hover:opacity-75 w-[50%] border-[1px] flex flex-col items-center justify-center py-12"
+            href="https://twitter.com/SInieke/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaFileDownload className="text-4xl text-white " />
+            <p className=" font-montserrat text-xs">Get CV</p>
+          </a>
+        </div>
+        <div class="py-8 mt-16 border-t border-white/10">
+          <p class="text-xs leading-relaxed text-center text-gray-300">
+            All rights reserved © 2022.
+            <br />
+            Created with Sendy Inieke.
           </p>
         </div>
       </div>

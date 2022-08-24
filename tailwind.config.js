@@ -7,6 +7,7 @@ module.exports = {
       aboreto: ["Aboreto"],
       playFairSc: ["Playfair Display SC"],
       ubuntu: ["Ubuntu"],
+      montserrat: ["montserrat"],
     },
   },
   plugins: [require("@tailwindcss/forms")],
