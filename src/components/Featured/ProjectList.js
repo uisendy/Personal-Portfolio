@@ -1,7 +1,7 @@
 import React from "react";
 import "./projectlist.css";
 
-const ProjectList = ({ key, index, activeImage, setActiveImage, project }) => {
+const ProjectList = ({ setActiveImage, project }) => {
   const updateActiveImage = (index) => {
     setActiveImage(index + 1);
   };
