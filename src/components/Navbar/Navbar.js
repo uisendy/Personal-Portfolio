@@ -3,7 +3,7 @@ import Menu from "./Menu";
 
 const Navbar = () => {
   return (
-    <section>
+    <section data-scroll-section>
       <Menu menu1="About" menu2="Works" menu3="Skills &amp; Experience" />
     </section>
   );
