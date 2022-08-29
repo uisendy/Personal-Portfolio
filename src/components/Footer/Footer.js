@@ -9,7 +9,10 @@ import {
 
 const Footer = () => {
   return (
-    <footer class="bg-black text-white h-[100vh]">
+    <footer
+      data-scroll-section
+      className="bg-black text-white h-screen pt-10 flex flex-col gap-7 justify-center"
+    >
       {/* <div class="max-w-screen-xl px-4 pt-16 pb-8 mx-auto sm:px-6 lg:px-8">
         <div class="max-w-md mx-auto">
           <strong class="block text-xl font-medium text-center text-white sm:text-3xl">
@@ -194,10 +197,13 @@ const Footer = () => {
           </p>
         </div>
       </div> */}
-      <div className="footer-container md:grid md:grid-cols-2 w-[87%] mx-auto h-[100%] py-20">
+      <div className="footer-container md:grid md:grid-cols-2 md:gap-20 md:items-center w-[87%] mx-auto py-20 md:py-0">
         <div className="pb-12">
-          <h2 className="text-4xl text-center pb-12">
-            You have a project in mind ? Let's discuss it together!
+          <h2 className="text-4xl text-center pb-12 md:text-7xl ">
+            You have a project in mind ?<br />
+            <span className="text-3xl italic md:text-6xl">
+              Let's discuss it together!
+            </span>
           </h2>
           <a
             className="flex flex-col justify-center text-center text-2xl"
@@ -207,9 +213,9 @@ const Footer = () => {
             <div className=" w-[250px] pb-2 mx-auto border-b-[3px] " />
           </a>
         </div>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap md:flex-col md:w-full">
           <a
-            className="transition hover:opacity-75 hover:line-through w-[50%] border-[1px] flex items-center justify-center py-12"
+            className="transition hover:opacity-75 hover:bg-slate-300 w-[50%] md:w-full border-[1px] md:border-x-0 flex items-center justify-center py-12"
             href="http://github.com/uisendy"
             target="_blank"
             rel="noreferrer"
@@ -217,7 +223,7 @@ const Footer = () => {
             <FaGithub className="text-4xl text-white" />
           </a>
           <a
-            className="transition hover:opacity-75 hover:line-through w-[50%] border-[1px] flex items-center justify-center py-12"
+            className="transition hover:opacity-75 hover:bg-slate-300 w-[50%] md:w-full border-[1px] md:border-x-0 flex items-center justify-center py-12"
             href="https://www.linkedin.com/in/inieke-sendy-129b57ab/"
             target="_blank"
             rel="noreferrer"
@@ -225,7 +231,7 @@ const Footer = () => {
             <FaLinkedinIn className="text-4xl text-white" />
           </a>
           <a
-            className="transition hover:opacity-75 hover:line-through w-[50%] border-[1px] flex items-center justify-center py-12"
+            className="transition hover:opacity-75 hover:bg-slate-300 w-[50%] md:w-full border-[1px] md:border-x-0 flex items-center justify-center py-12"
             href="https://www.linkedin.com/in/inieke-sendy-129b57ab/"
             target="_blank"
             rel="noreferrer"
@@ -234,22 +240,24 @@ const Footer = () => {
           </a>
 
           <a
-            className="transition hover:opacity-75 w-[50%] border-[1px] flex flex-col items-center justify-center py-12"
+            className="transition hover:opacity-75 w-[50%] md:w-full border-[1px] md:border-x-0 flex flex-col md:flex-row md:gap-5 items-center justify-center py-12 md:border-b-0"
             href="https://twitter.com/SInieke/"
             target="_blank"
             rel="noreferrer"
           >
-            <FaFileDownload className="text-4xl text-white " />
-            <p className=" font-montserrat text-xs">Get CV</p>
+            <p className=" text-center font-montserrat text-xs md:flex md:gap-4 md:text-4xl md:hover:bold ">
+              Get Resume{" "}
+            </p>
+            <FaFileDownload className=" block text-4xl text-white" />
           </a>
         </div>
-        <div class="py-8 mt-16 border-t border-white/10">
-          <p class="text-xs leading-relaxed text-center text-gray-300">
-            All rights reserved © 2022.
-            <br />
-            Created with Sendy Inieke.
-          </p>
-        </div>
+      </div>
+      <div className="border-t border-white/10 ">
+        <p className="text-xs leading-relaxed text-center text-gray-300">
+          All rights reserved © 2022.
+          <br />
+          Created by Sendy Inieke.
+        </p>
       </div>
     </footer>
   );
