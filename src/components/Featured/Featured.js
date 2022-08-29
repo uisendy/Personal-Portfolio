@@ -7,7 +7,7 @@ import ProjectList from "./ProjectList";
 const Featured = () => {
   const [activeImage, setActiveImage] = useState(1);
   return (
-    <section className=" text-white bg-black">
+    <section data-scroll-section className=" text-white bg-black">
       <SectionHeader
         title={"Recent Projects"}
         subtitle={"You can go through my recently completed projects"}
