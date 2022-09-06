@@ -1,0 +1,16 @@
+.footer-section{
+  opacity: 0;
+}
+
+.footer-section.is-reveal{
+  opacity: 1;
+}
+
+.lineChildren{
+  transform: translate(0, 500px);
+}
+
+.lineParent{
+  overflow: hidden;
+}
+
