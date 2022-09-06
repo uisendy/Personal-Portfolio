@@ -1,17 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import projects from "../../data/PortfolioImage";
 import "./featured.css";
 import ProjectList from "./ProjectList";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const Featured = () => {
   const [activeImage, setActiveImage] = useState(1);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      const sections = gsap.utils.toArray(".projects-wrapper");
+      gsap.to(sections, {
+        xPercent: -100 * (sections.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          start: "top top",
+          trigger: ref.current,
+          scroller: "#main-container",
+          pin: true,
+          scrub: 0.5,
+          snap: 1 / (sections.length - 1),
+          end: () => `+=${ref.current.offsetWidth}`,
+        },
+      });
+      ScrollTrigger.refresh();
+    });
+  }, []);
   return (
-    <section data-scroll-section className=" text-white bg-black">
-      <SectionHeader
+    <section data-scroll-section className=" text-white bg-black h-[100vh]">
+      {/* <SectionHeader
         title={"Recent Projects"}
         subtitle={"You can go through my recently completed projects"}
-      />
+      /> */}
 
       {/* <div className="grid grid-cols-4 gap-3">
         <p className="font-ubuntu font-thin text-xl pt-6 text-gray-500">
@@ -31,7 +54,10 @@ const Featured = () => {
           <img src={nondoHouse.image} alt="Travel-Project" />
         </div>
       </div> */}
-      <div className="projects h-[80vh] py-[10vh] w-[400%] flex flex-nowrap relative">
+      <div
+        ref={ref}
+        className="projects h-[80vh] py-[10vh] w-[400%] flex flex-nowrap relative"
+      >
         <div className="projects-counter absolute top-[5%] left-[100px] z-10 mix-blend-difference text-base text-white inline-block ">
           <span>{activeImage}</span>
           <span className="divider bg-white w-[6.25vw] my-[7px] mx-[10px] h-[1px] inline-block" />
@@ -42,9 +68,8 @@ const Featured = () => {
             key={project.id}
             project={project}
             index={index}
-            setActiveImage={setActiveImage}
             activeImage={activeImage}
-            // updateActiveImage={(index) => setActiveImage(index + 1)}
+            updateActiveImage={(index) => setActiveImage(index + 1)}
           />
         ))}
       </div>
