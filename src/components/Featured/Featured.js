@@ -5,10 +5,19 @@ import "./featured.css";
 import ProjectList from "./ProjectList";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import cn from "classnames";
+import useOnScreen from "../../hooks/useOnScreen";
 
 const Featured = () => {
   const [activeImage, setActiveImage] = useState(1);
+  const [reveal, setReveal] = useState(false);
   const ref = useRef(null);
+
+  const onScreen = useOnScreen(ref, 0.5);
+
+  useEffect(() => {
+    if (onScreen) setReveal(onScreen);
+  }, [onScreen]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -26,11 +35,15 @@ const Featured = () => {
           end: () => `+=${ref.current.offsetWidth}`,
         },
       });
+
       ScrollTrigger.refresh();
     });
   }, []);
   return (
-    <section data-scroll-section className=" text-white bg-black h-[100vh]">
+    <section
+      data-scroll-section
+      className={cn(" text-white bg-black h-[100vh]", { "is-reveal": reveal })}
+    >
       {/* <SectionHeader
         title={"Recent Projects"}
         subtitle={"You can go through my recently completed projects"}
@@ -56,7 +69,7 @@ const Featured = () => {
       </div> */}
       <div
         ref={ref}
-        className="projects h-[80vh] py-[10vh] w-[400%] flex flex-nowrap relative"
+        className="projects h-[80vh] py-[10vh] w-[400%] flex flex-nowrap relative bg-green-400"
       >
         <div className="projects-counter absolute top-[5%] left-[100px] z-10 mix-blend-difference text-base text-white inline-block ">
           <span>{activeImage}</span>
