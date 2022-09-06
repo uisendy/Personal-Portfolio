@@ -57,7 +57,6 @@ export default function useLocoScroll(start) {
         ScrollTrigger.removeEventListener("refresh", lsUpdate);
         locoScroll.destroy();
         locoScroll = null;
-        console.log("Kill", locoScroll);
       }
     };
   }, [start]);
