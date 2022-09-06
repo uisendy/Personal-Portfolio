@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { BsArrowRight } from "react-icons/bs";
+import gsap from "gsap";
+import SplitText from "../../utils/split3.min.js";
+import cn from "classnames";
+import useOnScreen from "../../hooks/useOnScreen";
+
 import {
   FaGithub,
   FaLinkedinIn,
@@ -8,10 +13,66 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+  const ref = useRef(null);
+
+  const [reveal, setReveal] = useState(false);
+  const onScreen = useOnScreen(ref, 0.5);
+
+  useEffect(() => {
+    if (onScreen) setReveal(onScreen);
+  }, [onScreen]);
+
+  useEffect(() => {
+    if (reveal) {
+      const split = new SplitText("#footer-header", {
+        type: "lines",
+        linesClass: "lineChildren",
+      });
+      new SplitText("#footer-header", {
+        type: "lines",
+        linesClass: "lineParent",
+      });
+      const splitCopyright = new SplitText("#copyright-tag", {
+        type: "lines",
+        linesClass: "charChildren",
+      });
+      new SplitText("#copyright-tag", {
+        type: "lines",
+        linesClass: "charParent",
+      });
+
+      gsap.fromTo(
+        split.lines,
+        { y: 200 },
+        {
+          duration: 2,
+          y: 0,
+          stagger: 0.1,
+          ease: "power2",
+        }
+      );
+
+      gsap.fromTo(
+        splitCopyright.lines,
+        { y: 200 },
+        {
+          duration: 2,
+          delay: 1,
+          y: 0,
+          stagger: 0.1,
+          ease: "power2",
+        }
+      );
+    }
+  }, [reveal]);
   return (
     <footer
       data-scroll-section
-      className="bg-black text-white h-screen pt-10 flex flex-col gap-7 justify-center"
+      ref={ref}
+      className={cn(
+        "footer-section bg-black text-white h-screen pt-10 flex flex-col gap-7 justify-center",
+        { "is-reveal": onScreen }
+      )}
     >
       {/* <div class="max-w-screen-xl px-4 pt-16 pb-8 mx-auto sm:px-6 lg:px-8">
         <div class="max-w-md mx-auto">
@@ -199,13 +260,17 @@ const Footer = () => {
       </div> */}
       <div className="footer-container md:grid md:grid-cols-2 md:gap-20 md:items-center w-[87%] mx-auto py-20 md:py-0">
         <div className="pb-12">
-          <h2 className="text-4xl text-center pb-12 md:text-7xl ">
-            You have a project in mind ?<br />
+          <h2
+            id="footer-header"
+            className="text-4xl text-center pb-16 md:text-6xl "
+          >
+            Do you have a project in mind ?<br />
             <span className="text-3xl italic md:text-6xl">
               Let's discuss it together!
             </span>
           </h2>
           <a
+            id="mail"
             className="flex flex-col justify-center text-center text-2xl"
             href="mailto:ini.e.sendy@gmail.com"
           >
@@ -253,7 +318,10 @@ const Footer = () => {
         </div>
       </div>
       <div className="border-t border-white/10 ">
-        <p className="text-xs leading-relaxed text-center text-gray-300">
+        <p
+          id="copyright-tag"
+          className="text-xs leading-relaxed text-center text-gray-300"
+        >
           All rights reserved © 2022.
           <br />
           Created by Sendy Inieke.
