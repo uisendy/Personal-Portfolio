@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import useOnScreen from "../../hooks/useOnScreen";
+import cn from "classnames";
 import "./projectlist.css";
 
-const ProjectList = ({ setActiveImage, project }) => {
-  const updateActiveImage = (index) => {
-    setActiveImage(index + 1);
-  };
+const ProjectList = ({ updateActiveImage, project, index }) => {
+  const ref = useRef(null);
+
+  const onScreen = useOnScreen(ref, 0.5);
+
+  useEffect(() => {
+    if (onScreen) {
+      updateActiveImage(index);
+    }
+  }, [onScreen, index, updateActiveImage]);
+
   return (
-    <div className="projects-wrapper aspect-video h-[100%] w-[100vw]">
+    <div
+      ref={ref}
+      className={cn("projects-wrapper aspect-video h-[100%] w-[100vw]", {
+        "is-reveal": onScreen,
+      })}
+    >
       <div />
       <div className="project-item w-[100%] h-[100%] relative will-change-transform">
         <div className="project-info absolute bottom-[10%] z-10 translate-x-[-20%] w-[60%] px-[3%] pb-[3%]">
-          <h1 className="project-info-name text-[4vw] text-bold text-white">
+          <h1 className=" italic project-info-name text-[4vw] text-bold text-white">
             {project.name}
           </h1>
           <div className="flex gap-2 text-wt font-montserrat">
