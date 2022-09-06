@@ -9,7 +9,7 @@ import Footer from "./components/Footer/Footer";
 
 import useLocoScroll from "./hooks/useLocoScroll";
 function App() {
-  const [preLoader, setPreLoader] = useState(true);
+  const [preLoader, setPreLoader] = useState(false);
 
   useLocoScroll(!preLoader);
   const [timer, setTimer] = useState(3);
@@ -50,8 +50,6 @@ function App() {
           <Navbar />
           <Header />
           <Featured />
-          {/* <About /> */}
-          {/* <RecentProject /> */}
           <Footer />
         </div>
       )}
