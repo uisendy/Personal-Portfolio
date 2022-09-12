@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import useLocoScroll from './hooks/useLocoScroll';
 function App() {
   const [preLoader, setPreLoader] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   useLocoScroll(!preLoader);
   const [timer, setTimer] = useState(3);
@@ -43,11 +44,11 @@ function App() {
         </div>
       ) : (
         <div
-          className="main-container"
+          className={isNavOpen ? 'main-container nav__open' : 'main-container'}
           id="main-container"
           data-scroll-container
         >
-          <Navbar />
+          <Navbar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
           <Header />
           <Featured />
           <Footer />

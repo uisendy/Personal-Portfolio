@@ -1,13 +1,11 @@
-import React from "react";
-import { useState } from "react";
-import "./style.css";
-import { BsArrowRight } from "react-icons/bs";
-import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import LogoWhiteFrameless from "../../Assets/Logo/LogoWhiteFrameless.png";
+import React from 'react';
+import './style.css';
+import { BsArrowRight } from 'react-icons/bs';
+import { FiArrowUpRight } from 'react-icons/fi';
+import { FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import LogoWhiteFrameless from '../../Assets/Logo/LogoWhiteFrameless.png';
 
-const Menu = ({ menu1, menu2, menu3 }) => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-
+const Menu = ({ menu1, menu2, menu3, isNavOpen, setIsNavOpen }) => {
   return (
     <div className="py-8 px-8 bg-black w-[100vw]">
       <nav className="flex justify-between items-center">
@@ -16,8 +14,8 @@ const Menu = ({ menu1, menu2, menu3 }) => {
             onClick={() => setIsNavOpen((open) => !open)}
             className={
               isNavOpen
-                ? "hamburger-menu is-active"
-                : "hamburger-menu space-y-2"
+                ? 'hamburger-menu is-active'
+                : 'hamburger-menu space-y-2'
             }
           >
             {/* <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
@@ -25,8 +23,8 @@ const Menu = ({ menu1, menu2, menu3 }) => {
             <div className="menu-icon"></div>
           </div>
 
-          <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
-            {" "}
+          <div className={isNavOpen ? 'showMenuNav' : 'hideMenuNav'}>
+            {' '}
             <div
               onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
             ></div>
@@ -37,7 +35,7 @@ const Menu = ({ menu1, menu2, menu3 }) => {
                     className="links flex item-centre hover:italic"
                     href="/about"
                   >
-                    {menu1} <BsArrowRight className="arrow" />
+                    {menu1} <FiArrowUpRight className="arrow" />
                   </a>
                 </li>
                 {/* <li className="w-[60%] bg-gray-800 h-[1px]"></li> */}
@@ -46,7 +44,7 @@ const Menu = ({ menu1, menu2, menu3 }) => {
                     className="links flex item-centre hover:italic"
                     href="/portfolio"
                   >
-                    {menu2} <BsArrowRight className="arrow" />
+                    {menu2} <FiArrowUpRight className="arrow" />
                   </a>
                 </li>
                 {/* <li className="w-[60%] bg-gray-800 h-[1px]"></li> */}
@@ -55,7 +53,7 @@ const Menu = ({ menu1, menu2, menu3 }) => {
                     className="links flex item-centre hover:italic"
                     href="/contact"
                   >
-                    {menu3} <BsArrowRight className="arrow" />
+                    {menu3} <FiArrowUpRight className="arrow" />
                   </a>
                 </li>
               </ul>
@@ -105,7 +103,7 @@ const Menu = ({ menu1, menu2, menu3 }) => {
           <a className="" href="/contact">
             CONTACT
           </a>
-          <BsArrowRight className="" />
+          <FiArrowUpRight className="" />
         </div>
       </nav>
     </div>

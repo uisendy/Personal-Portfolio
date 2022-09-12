@@ -1,10 +1,16 @@
-import React from "react";
-import Menu from "./Menu";
+import React from 'react';
+import Menu from './Menu';
 
-const Navbar = () => {
+const Navbar = ({ isNavOpen, setIsNavOpen }) => {
   return (
-    <section data-scroll-section>
-      <Menu menu1="About" menu2="Works" menu3="Skills &amp; Experience" />
+    <section>
+      <Menu
+        menu1="About"
+        menu2="Works"
+        menu3="Skills &amp; Experience"
+        isNavOpen={isNavOpen}
+        setIsNavOpen={setIsNavOpen}
+      />
     </section>
   );
 };
