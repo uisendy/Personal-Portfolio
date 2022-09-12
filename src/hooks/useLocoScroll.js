@@ -1,8 +1,8 @@
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { useEffect } from "react";
-import LocomotiveScroll from "locomotive-scroll";
-import "locomotive-scroll/src/locomotive-scroll.scss";
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useEffect } from 'react';
+import LocomotiveScroll from 'locomotive-scroll';
+import 'locomotive-scroll/src/locomotive-scroll.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,16 +11,16 @@ export default function useLocoScroll(start) {
     if (!start) return;
     let locoScroll = null;
 
-    const scrollEl = document.querySelector("#main-container");
+    const scrollEl = document.querySelector('#main-container');
 
     locoScroll = new LocomotiveScroll({
       el: scrollEl,
       smooth: true,
       multiplier: 1,
-      class: "is-reveal",
+      class: 'is-reveal',
     });
 
-    locoScroll.on("scroll", () => {
+    locoScroll.on('scroll', () => {
       ScrollTrigger.update();
     });
 
@@ -33,13 +33,24 @@ export default function useLocoScroll(start) {
         }
         return null;
       },
+
       scrollLeft(value) {
+        console.log('scrolling left');
         if (locoScroll) {
           return arguments.length
             ? locoScroll.scrollTo(value, 0, 0)
             : locoScroll.scroll.instance.scroll.x;
         }
         return null;
+      },
+
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
       },
     });
 
@@ -49,12 +60,12 @@ export default function useLocoScroll(start) {
       }
     };
 
-    ScrollTrigger.addEventListener("refresh", lsUpdate);
+    ScrollTrigger.addEventListener('refresh', lsUpdate);
     ScrollTrigger.refresh();
 
     return () => {
       if (locoScroll) {
-        ScrollTrigger.removeEventListener("refresh", lsUpdate);
+        ScrollTrigger.removeEventListener('refresh', lsUpdate);
         locoScroll.destroy();
         locoScroll = null;
       }
