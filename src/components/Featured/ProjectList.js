@@ -21,7 +21,7 @@ const ProjectList = ({ updateActiveImage, project, index }) => {
         'is-reveal': onScreen,
       })}
     >
-      <div />
+      <div className="hidden md:block" />
       <div className="project-item w-[100%] h-[100%] relative will-change-transform">
         <div className="project-info absolute bottom-[10%] z-10 translate-x-[-20%] w-[60%] px-[3%] pb-[3%]">
           <h1 className=" italic project-info-name text-[4vw] text-bold text-white">
@@ -46,7 +46,7 @@ const ProjectList = ({ updateActiveImage, project, index }) => {
           style={{ backgroundImage: `url(${project.image})` }}
         ></div>
       </div>
-      <div />
+      <div className="hidden md:block" />
     </div>
   );
 };

@@ -1,6 +1,5 @@
 .projects-wrapper {
-  display: grid;
-  grid-template-columns: 20vw 1fr 200px;
+  
 }
 
 .project-info{
@@ -9,4 +8,12 @@
   background-color: rgba(0, 0, 0, 0.57);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+
+@media only screen and (min-device-width: 768px){
+  .projects-wrapper {
+    display: grid;
+    grid-template-columns: 20vw 1fr 200px;
+  }
 }

@@ -6,20 +6,13 @@ import ProjectList from './ProjectList';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import cn from 'classnames';
-// import useOnScreen from '../../hooks/useOnScreen';
 
 const Featured = () => {
-  const scrollEl = document.querySelector('#main-container');
   const [activeImage, setActiveImage] = useState(1);
   const [reveal, setReveal] = useState(false);
   const ref = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
-  // const onScreen = useOnScreen(ref, 0.3);
-
-  // useEffect(() => {
-  //   if (onScreen) setReveal(onScreen);
-  // }, [onScreen]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -57,7 +50,7 @@ const Featured = () => {
       <div
         ref={ref}
         id="projects"
-        className="projects h-[100vh] py-[10vh] w-[500%] flex flex-nowrap relative"
+        className="projects h-[40vh] md:h-[100vh] md:py-[10vh] md:w-[500%] md:flex md:flex-nowrap relative"
       >
         <div className="projects-counter absolute top-[5%] left-[100px] z-10 mix-blend-difference text-base text-white inline-block ">
           <span>{activeImage}</span>
