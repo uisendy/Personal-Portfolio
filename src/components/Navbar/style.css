@@ -22,10 +22,6 @@
   background-color: white;
 }
 
-.menu-icon {
-
-}
-
 .hamburger-menu.is-active::before {
   transform: rotate(-45deg) translate(-11.5px, 11.5px);
   background-color: white;

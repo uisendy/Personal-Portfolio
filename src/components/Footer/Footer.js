@@ -310,7 +310,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <p className=" text-center font-montserrat text-xs md:flex md:gap-4 md:text-4xl md:hover:bold ">
+            <p className=" text-center font-playFairSc uppercase text-xs md:flex md:gap-4 md:text-4xl md:hover:bold ">
               Get Resume{' '}
             </p>
             <FaFileDownload className=" block text-4xl text-white" />
