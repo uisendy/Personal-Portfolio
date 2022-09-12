@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 function useOnScreen(ref, threshold = 0.3) {
   // State and setter for storing whether element is visible
@@ -11,9 +11,9 @@ function useOnScreen(ref, threshold = 0.3) {
         setIntersecting(entry?.isIntersecting ?? false);
       },
       {
-        rootMargin: "0px",
+        rootMargin: '0px',
         threshold,
-      }
+      },
     );
     const currentRef = ref.current;
     if (currentRef) {
