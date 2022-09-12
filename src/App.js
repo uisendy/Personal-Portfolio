@@ -1,13 +1,13 @@
-import { useEffect, useRef, useState } from "react";
-import CustomCursor from "./CustomCursor";
-import Navbar from "./components/Navbar/Navbar";
-import Header from "./components/Header/Header";
-import Featured from "./components/Featured/Featured";
+import { useEffect, useRef, useState } from 'react';
+import CustomCursor from './CustomCursor';
+import Navbar from './components/Navbar/Navbar';
+import Header from './components/Header/Header';
+import Featured from './components/Featured/Featured';
 // import About from "./components/About/About";
-import RecentProject from "./components/RecentProject/RecentProject";
-import Footer from "./components/Footer/Footer";
+import RecentProject from './components/RecentProject/RecentProject';
+import Footer from './components/Footer/Footer';
 
-import useLocoScroll from "./hooks/useLocoScroll";
+import useLocoScroll from './hooks/useLocoScroll';
 function App() {
   const [preLoader, setPreLoader] = useState(false);
 
