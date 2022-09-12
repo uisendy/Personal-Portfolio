@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
-import { BsArrowRight } from "react-icons/bs";
-import gsap from "gsap";
-import SplitText from "../../utils/split3.min.js";
-import cn from "classnames";
-import useOnScreen from "../../hooks/useOnScreen";
+import React, { useState, useEffect, useRef } from 'react';
+// import { BsArrowRight } from "react-icons/bs";
+import gsap from 'gsap';
+import SplitText from '../../utils/split3.min.js';
+import cn from 'classnames';
+import useOnScreen from '../../hooks/useOnScreen';
 
 import {
   FaGithub,
   FaLinkedinIn,
   FaTwitter,
   FaFileDownload,
-} from "react-icons/fa";
+} from 'react-icons/fa';
 
 const Footer = () => {
   const ref = useRef(null);
@@ -24,21 +24,21 @@ const Footer = () => {
 
   useEffect(() => {
     if (reveal) {
-      const split = new SplitText("#footer-header", {
-        type: "lines",
-        linesClass: "lineChildren",
+      const split = new SplitText('#footer-header', {
+        type: 'lines',
+        linesClass: 'lineChildren',
       });
-      new SplitText("#footer-header", {
-        type: "lines",
-        linesClass: "lineParent",
+      new SplitText('#footer-header', {
+        type: 'lines',
+        linesClass: 'lineParent',
       });
-      const splitCopyright = new SplitText("#copyright-tag", {
-        type: "lines",
-        linesClass: "charChildren",
+      const splitCopyright = new SplitText('#copyright-tag', {
+        type: 'lines',
+        linesClass: 'charChildren',
       });
-      new SplitText("#copyright-tag", {
-        type: "lines",
-        linesClass: "charParent",
+      new SplitText('#copyright-tag', {
+        type: 'lines',
+        linesClass: 'charParent',
       });
 
       gsap.fromTo(
@@ -48,8 +48,8 @@ const Footer = () => {
           duration: 2,
           y: 0,
           stagger: 0.1,
-          ease: "power2",
-        }
+          ease: 'power2',
+        },
       );
 
       gsap.fromTo(
@@ -60,8 +60,8 @@ const Footer = () => {
           delay: 1,
           y: 0,
           stagger: 0.1,
-          ease: "power2",
-        }
+          ease: 'power2',
+        },
       );
     }
   }, [reveal]);
@@ -70,8 +70,8 @@ const Footer = () => {
       data-scroll-section
       ref={ref}
       className={cn(
-        "footer-section bg-black text-white h-screen pt-10 flex flex-col gap-7 justify-center",
-        { "is-reveal": onScreen }
+        'footer-section bg-black text-white h-screen pt-10 flex flex-col gap-7 justify-center',
+        { 'is-reveal': onScreen },
       )}
     >
       {/* <div class="max-w-screen-xl px-4 pt-16 pb-8 mx-auto sm:px-6 lg:px-8">
@@ -311,7 +311,7 @@ const Footer = () => {
             rel="noreferrer"
           >
             <p className=" text-center font-montserrat text-xs md:flex md:gap-4 md:text-4xl md:hover:bold ">
-              Get Resume{" "}
+              Get Resume{' '}
             </p>
             <FaFileDownload className=" block text-4xl text-white" />
           </a>
