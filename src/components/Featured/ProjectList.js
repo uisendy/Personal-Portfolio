@@ -1,24 +1,24 @@
-import React, { useEffect, useRef } from "react";
-import useOnScreen from "../../hooks/useOnScreen";
-import cn from "classnames";
-import "./projectlist.css";
+import React, { useEffect, useRef } from 'react';
+import useOnScreen from '../../hooks/useOnScreen';
+import cn from 'classnames';
+import './projectlist.css';
 
 const ProjectList = ({ updateActiveImage, project, index }) => {
   const ref = useRef(null);
 
-  const onScreen = useOnScreen(ref, 0.5);
+  const onScreen = useOnScreen(ref, 0.3);
 
   useEffect(() => {
     if (onScreen) {
       updateActiveImage(index);
     }
-  }, [onScreen, index, updateActiveImage]);
+  }, [onScreen, index]);
 
   return (
     <div
       ref={ref}
-      className={cn("projects-wrapper aspect-video h-[100%] w-[100vw]", {
-        "is-reveal": onScreen,
+      className={cn('projects-wrapper aspect-video h-[100%] w-[100vw]', {
+        'is-reveal': onScreen,
       })}
     >
       <div />
@@ -39,7 +39,10 @@ const ProjectList = ({ updateActiveImage, project, index }) => {
           </p>
         </div>
         <div
-          className="project-image bg-cover will-change-transform bg-center origin-center w-[100%] h-[100%] scale-100"
+          className={cn(
+            'project-image bg-cover will-change-transform bg-center origin-center w-[100%] h-[100%] scale-100',
+            { 'is-reveal': onScreen },
+          )}
           style={{ backgroundImage: `url(${project.image})` }}
         ></div>
       </div>
