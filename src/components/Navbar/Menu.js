@@ -1,11 +1,11 @@
 import React from 'react';
 import './style.css';
-import { BsArrowRight } from 'react-icons/bs';
+import MenuList from './MenuList';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import LogoWhiteFrameless from '../../Assets/Logo/LogoWhiteFrameless.png';
 
-const Menu = ({ menu1, menu2, menu3, isNavOpen, setIsNavOpen }) => {
+const Menu = ({ menuList, isNavOpen, setIsNavOpen }) => {
   return (
     <div className="py-8 px-8 bg-black w-[100vw]">
       <nav className="flex justify-between items-center">
@@ -18,8 +18,6 @@ const Menu = ({ menu1, menu2, menu3, isNavOpen, setIsNavOpen }) => {
                 : 'hamburger-menu space-y-2'
             }
           >
-            {/* <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-            <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span> */}
             <div className="menu-icon"></div>
           </div>
 
@@ -30,32 +28,13 @@ const Menu = ({ menu1, menu2, menu3, isNavOpen, setIsNavOpen }) => {
             ></div>
             <div className="nav-menu flex justify-center flex-col gap-10 w-[80%] mx-[auto]">
               <ul className="flex flex-col gap-10 md:gap-16 justify-between min-h-[250px] w-[80%] text-white text-6xl md:w-[80%] md:text-[6rem]">
-                <li className="flex">
-                  <a
-                    className="links flex item-centre hover:italic"
-                    href="/about"
-                  >
-                    {menu1} <FiArrowUpRight className="arrow" />
-                  </a>
-                </li>
-                {/* <li className="w-[60%] bg-gray-800 h-[1px]"></li> */}
-                <li className="flex">
-                  <a
-                    className="links flex item-centre hover:italic"
-                    href="/portfolio"
-                  >
-                    {menu2} <FiArrowUpRight className="arrow" />
-                  </a>
-                </li>
-                {/* <li className="w-[60%] bg-gray-800 h-[1px]"></li> */}
-                <li className="flex">
-                  <a
-                    className="links flex item-centre hover:italic"
-                    href="/contact"
-                  >
-                    {menu3} <FiArrowUpRight className="arrow" />
-                  </a>
-                </li>
+                {menuList.map((menu) => (
+                  <MenuList
+                    menu={menu}
+                    key={menu}
+                    FiArrowUpRight={FiArrowUpRight}
+                  />
+                ))}
               </ul>
               <div className="nav-menu-line h-[1px] bg-slate-400 "></div>
               <div className="nav-menu-socials flex gap-4">

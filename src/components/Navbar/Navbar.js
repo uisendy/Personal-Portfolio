@@ -2,12 +2,11 @@ import React from 'react';
 import Menu from './Menu';
 
 const Navbar = ({ isNavOpen, setIsNavOpen }) => {
+  const menuList = ['About', 'Works', 'Skills & Experience'];
   return (
     <section>
       <Menu
-        menu1="About"
-        menu2="Works"
-        menu3="Skills &amp; Experience"
+        menuList={menuList}
         isNavOpen={isNavOpen}
         setIsNavOpen={setIsNavOpen}
       />
