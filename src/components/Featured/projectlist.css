@@ -3,11 +3,7 @@
 }
 
 .project-info{
-  backdrop-filter: blur(17px) saturate(127%);
-  -webkit-backdrop-filter: blur(17px) saturate(127%);
-  background-color: rgba(0, 0, 0, 0.57);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  background-color: transparent
 }
 
 
@@ -15,5 +11,13 @@
   .projects-wrapper {
     display: grid;
     grid-template-columns: 20vw 1fr 200px;
+  }
+
+  .project-info{
+    backdrop-filter: blur(17px) saturate(127%);
+    -webkit-backdrop-filter: blur(17px) saturate(127%);
+    background-color: rgba(0, 0, 0, 0.57);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
   }
 }

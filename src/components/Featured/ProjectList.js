@@ -12,7 +12,7 @@ const ProjectList = ({ updateActiveImage, project, index }) => {
     if (onScreen) {
       updateActiveImage(index);
     }
-  }, [onScreen, index]);
+  }, [onScreen, index, updateActiveImage]);
 
   return (
     <div
@@ -22,19 +22,19 @@ const ProjectList = ({ updateActiveImage, project, index }) => {
       })}
     >
       <div className="hidden md:block" />
-      <div className="project-item w-[100%] h-[100%] relative will-change-transform">
-        <div className="project-info absolute bottom-[10%] z-10 translate-x-[-20%] w-[60%] px-[3%] pb-[3%]">
-          <h1 className=" italic project-info-name text-[4vw] text-bold text-white">
+      <div className="project-item w-[70%] h-[70%] mx-[auto] md:w-[100%] md:h-[100%] md:relative md:will-change-transform">
+        <div className="project-info md:block md:absolute md:bottom-[10%] md:z-10 md:translate-x-[-20%] md:w-[60%] md:px-[3%]md:pb-[3%]">
+          <h1 className="project-info-name  text-center md:text-left italic text-[4vw] text-bold text-white pt-10 pb-3 md:pb-0 md:pt-0">
             {project.name}
           </h1>
-          <div className="flex gap-2 text-wt font-montserrat">
+          <div className=" hidden md:flex gap-2 text-wt font-montserrat">
             <small>{project.technology?.javascript}</small>
             <small>{project.technology?.react}</small>
             <small>{project.technology?.tailwindcss}</small>
             <small>{project.technology?.rubyOnRails}</small>
             <small>{project.technology?.typeScript}</small>
           </div>
-          <p className="project-into-description relative mt-[2vh] text-sm font-extralight w-[100%] text-white font-montserrat">
+          <p className="project-into-description hidden md:block relative mt-[2vh] text-sm font-extralight w-[100%] text-white font-montserrat">
             {project.description}
           </p>
         </div>
