@@ -297,7 +297,7 @@ const Footer = () => {
           </a>
           <a
             className="transition hover:opacity-75 hover:bg-slate-300 w-[50%] md:w-full border-[1px] md:border-x-0 flex items-center justify-center py-12"
-            href="https://www.linkedin.com/in/inieke-sendy-129b57ab/"
+            href="https://twitter.com/SInieke/"
             target="_blank"
             rel="noreferrer"
           >
@@ -310,10 +310,10 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <p className=" text-center font-playFairSc uppercase text-xs md:flex md:gap-4 md:text-4xl md:hover:bold ">
+            <FaFileDownload className=" block text-4xl text-white" />
+            <p className=" text-center font-playFairSc uppercase text-xs pt-3 md:pt-0 md:flex md:gap-4 md:text-4xl md:hover:bold ">
               Get Resume{' '}
             </p>
-            <FaFileDownload className=" block text-4xl text-white" />
           </a>
         </div>
       </div>
