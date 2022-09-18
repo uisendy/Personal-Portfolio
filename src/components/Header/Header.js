@@ -1,44 +1,45 @@
-import React from "react";
-import { useEffect } from "react";
-import { gsap } from "gsap";
-import SplitText from "../../utils/split3.min.js";
-import "./header.css";
+import React from 'react';
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import SplitText from '../../utils/split3.min.js';
+import './header.css';
+import ScrollDown from './ScrollDown.js';
 
 const Header = () => {
   useEffect(() => {
-    const split = new SplitText("#header", {
-      type: "lines",
-      linesClass: "lineChildren",
+    const split = new SplitText('#header', {
+      type: 'lines',
+      linesClass: 'lineChildren',
     });
 
-    const splitPos = new SplitText("#header-dev", {
-      type: "lines",
-      linesClass: "lineChildrenDev",
+    const splitPos = new SplitText('#header-dev', {
+      type: 'lines',
+      linesClass: 'lineChildrenDev',
     });
 
-    const splitDesc = new SplitText("#header-desc", {
-      type: "lines",
-      linesClass: "lineChildrenDesc",
+    const splitDesc = new SplitText('#header-desc', {
+      type: 'lines',
+      linesClass: 'lineChildrenDesc',
     });
 
-    new SplitText("#header", {
-      type: "lines",
-      linesClass: "lineParents",
+    new SplitText('#header', {
+      type: 'lines',
+      linesClass: 'lineParents',
     });
-    new SplitText("#header-dev", {
-      type: "lines",
-      linesClass: "lineParents",
+    new SplitText('#header-dev', {
+      type: 'lines',
+      linesClass: 'lineParents',
     });
-    new SplitText("#header-desc", {
-      type: "words,chars",
-      linesClass: "lineParents",
+    new SplitText('#header-desc', {
+      type: 'words,chars',
+      linesClass: 'lineParents',
     });
     gsap.to(split.lines, {
       duration: 2,
       y: 0,
       opacity: 1,
       stagger: 0.1,
-      ease: "power2",
+      ease: 'power2',
     });
 
     gsap.to(splitPos.lines, {
@@ -46,7 +47,7 @@ const Header = () => {
       y: 0,
       opacity: 1,
       stagger: 0.1,
-      ease: "power2",
+      ease: 'power2',
     });
 
     gsap.timeline().from(splitDesc.lines, {
@@ -55,11 +56,11 @@ const Header = () => {
       scale: 0,
       y: 80,
       rotationX: 180,
-      transformOrigin: "0% 50% -50",
-      ease: "back",
+      transformOrigin: '0% 50% -50',
+      ease: 'back',
       stagger: 0.01,
     });
-    gsap.set("#header-desc", { perspective: 400 });
+    gsap.set('#header-desc', { perspective: 400 });
   }, []);
 
   return (
@@ -90,9 +91,7 @@ const Header = () => {
           omnis sed ad vero, in incidunt corrupti necessitatibus rerum. Possimus
           unde sint perspiciatis?
         </p>
-        <div className=" text-center h-px w-5rem md:w-[10rem] bg-white origin-top-right rotate-90 absolute top-[98%] right-2/4 md:left-[87%]">
-          Scroll down
-        </div>
+        <ScrollDown />
       </div>
     </section>
   );
