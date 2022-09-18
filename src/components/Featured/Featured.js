@@ -6,6 +6,7 @@ import ProjectList from './ProjectList';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import cn from 'classnames';
+import ScrollDown from '../Header/ScrollDown';
 
 const Featured = () => {
   const [activeImage, setActiveImage] = useState(1);
