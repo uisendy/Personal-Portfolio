@@ -1,5 +1,5 @@
-import React from "react";
-import SectionHeader from "../SectionHeader/SectionHeader";
+import React from 'react';
+import SectionHeader from '../SectionHeader/SectionHeader';
 
 const About = () => {
   return (
@@ -7,7 +7,6 @@ const About = () => {
       className="bg-black text-white w-[100vW] px-[6.5%]"
       data-scroll-section
     >
-      <SectionHeader title="About Me" />
       <div className="w-[100%]">
         <p className="">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque
