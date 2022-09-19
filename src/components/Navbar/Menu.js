@@ -7,25 +7,22 @@ import LogoWhiteFrameless from '../../Assets/Logo/LogoWhiteFrameless.png';
 
 const Menu = ({ menuList, isNavOpen, setIsNavOpen }) => {
   return (
-    <div className="py-8 px-8 bg-black w-[100vw]">
-      <nav className="flex justify-between items-center">
+    <div className="py-5 px-8 bg-black w-[100vw]">
+      <nav className="flex items-center justify-between pr-5">
+        <div
+          onClick={() => setIsNavOpen((open) => !open)}
+          className={
+            isNavOpen
+              ? 'hamburger-menu is-active fixed'
+              : 'hamburger-menu space-y-2 fixed'
+          }
+        >
+          <div className="menu-icon"></div>
+        </div>
         <div className="">
-          <div
-            onClick={() => setIsNavOpen((open) => !open)}
-            className={
-              isNavOpen
-                ? 'hamburger-menu is-active'
-                : 'hamburger-menu space-y-2'
-            }
-          >
-            <div className="menu-icon"></div>
-          </div>
-
           <div className={isNavOpen ? 'showMenuNav' : 'hideMenuNav'}>
             {' '}
-            <div
-              onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
-            ></div>
+            <div onClick={() => setIsNavOpen(false)}></div>
             <div className="nav-menu flex justify-center flex-col gap-10 w-[80%] mx-[auto]">
               <ul className="flex flex-col gap-10 md:gap-16 justify-between min-h-[250px] w-[80%] text-white text-6xl md:w-[80%] md:text-[6rem]">
                 {menuList.map((menu) => (
@@ -69,20 +66,14 @@ const Menu = ({ menuList, isNavOpen, setIsNavOpen }) => {
         <div className="">
           <a
             className="z-[40] relative text-white text-2xl md:text-4xl"
-            href="/contact"
+            href="/home"
           >
             <img
-              className="w-[70px] h-[70px]"
+              className="w-[50px] h-[50px]"
               src={LogoWhiteFrameless}
               alt="Logo"
             />
           </a>
-        </div>
-        <div className="contact hidden items-center gap-2 z-[40] text-white font-playFairSc text-xl md:flex md:text-3xl md:pr-10 md:relative">
-          <a className="" href="/contact">
-            CONTACT
-          </a>
-          <BsArrowUpRight className="" />
         </div>
       </nav>
     </div>

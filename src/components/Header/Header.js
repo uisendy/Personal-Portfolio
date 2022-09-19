@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import SplitText from '../../utils/split3.min.js';
 import './header.css';
 import ScrollDown from './ScrollDown.js';
+import { BsArrowUpRight } from 'react-icons/bs';
 
 const Header = () => {
   useEffect(() => {
@@ -16,6 +17,11 @@ const Header = () => {
       type: 'lines',
       linesClass: 'lineChildrenDev',
     });
+
+    // const splitCon = new SplitText('.contact-me', {
+    //   type: 'lines',
+    //   linesClass: 'lineChildrenCon',
+    // });
 
     const splitDesc = new SplitText('#header-desc', {
       type: 'lines',
@@ -30,6 +36,10 @@ const Header = () => {
       type: 'lines',
       linesClass: 'lineParents',
     });
+    // new SplitText('.contact', {
+    //   type: 'lines',
+    //   linesClass: 'lineParents',
+    // });
     new SplitText('#header-desc', {
       type: 'words,chars',
       linesClass: 'lineParents',
@@ -49,6 +59,14 @@ const Header = () => {
       stagger: 0.1,
       ease: 'power2',
     });
+
+    // gsap.to(splitCon.lines, {
+    //   duration: 3,
+    //   y: 0,
+    //   opacity: 1,
+    //   stagger: 0.1,
+    //   ease: 'power2',
+    // });
 
     gsap.timeline().from(splitDesc.lines, {
       duration: 3,
@@ -73,14 +91,24 @@ const Header = () => {
           id="header"
           className=" text-7xl italic md:not-italic md:text-9xl font-extrabold "
         >
-          Hi. I'm Sendy
+          Hi, I'm Sendy.
         </h1>
         <p
           id="header-dev"
           className=" text-3xl border-t-[1px] pt-5 md:text-8xl font-light italic md:border-t-0 md:pt-0"
         >
-          A software Developer
+          Web Developer
         </p>
+        <div className="contact pt-10 px-4">
+          <a href="/contact">
+            <p className="contact-me items-center gap-2 z-[40] hover:underline hover:italic text-white font-playFairSc text-xl flex md:text-3xl">
+              CONTACT{' '}
+              <span>
+                <BsArrowUpRight />
+              </span>
+            </p>
+          </a>
+        </div>
         <p
           id="header-desc"
           className=" hidden uppercase font-montserrat text-left text-sm md:block md:absolute md:top-[70%] md:left-[60%] md:w-[32%]"
