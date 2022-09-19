@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import MenuList from './MenuList';
-import { FiArrowUpRight } from 'react-icons/fi';
+import { BsArrowUpRight } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import LogoWhiteFrameless from '../../Assets/Logo/LogoWhiteFrameless.png';
 
@@ -32,7 +32,7 @@ const Menu = ({ menuList, isNavOpen, setIsNavOpen }) => {
                   <MenuList
                     menu={menu}
                     key={menu}
-                    FiArrowUpRight={FiArrowUpRight}
+                    BsArrowUpRight={BsArrowUpRight}
                   />
                 ))}
               </ul>
@@ -82,7 +82,7 @@ const Menu = ({ menuList, isNavOpen, setIsNavOpen }) => {
           <a className="" href="/contact">
             CONTACT
           </a>
-          <FiArrowUpRight className="" />
+          <BsArrowUpRight className="" />
         </div>
       </nav>
     </div>
