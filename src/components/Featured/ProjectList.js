@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import useOnScreen from '../../hooks/useOnScreen';
 import cn from 'classnames';
 import './projectlist.css';
+import { BsArrowUpRight } from 'react-icons/bs';
+import { FaGithub } from 'react-icons/fa';
 
 const ProjectList = ({ updateActiveImage, project, index }) => {
   const ref = useRef(null);
@@ -21,30 +23,37 @@ const ProjectList = ({ updateActiveImage, project, index }) => {
         'is-reveal': onScreen,
       })}
     >
-      <div className="hidden md:block" />
-      <div className="project-item w-[70%] h-[70%] mx-[auto] md:w-[100%] md:h-[100%] md:relative md:will-change-transform">
-        <div className="project-info md:block md:absolute md:bottom-[10%] md:z-10 md:translate-x-[-20%] md:w-[60%] md:px-[3%]md:pb-[3%]">
-          <h1 className="project-info-name  text-center md:text-left italic text-[4vw] text-bold text-white pt-10 pb-3 md:pb-0 md:pt-0">
-            {project.name}
-          </h1>
-          <div className=" hidden md:flex gap-2 text-wt font-montserrat">
-            <small>{project.technology?.javascript}</small>
-            <small>{project.technology?.react}</small>
-            <small>{project.technology?.tailwindcss}</small>
-            <small>{project.technology?.rubyOnRails}</small>
-            <small>{project.technology?.typeScript}</small>
-          </div>
-          <p className="project-into-description hidden md:block relative mt-[2vh] text-sm font-extralight w-[100%] text-white font-montserrat">
-            {project.description}
-          </p>
-        </div>
+      <div className="hidden md:block " />
+      <div className=" project-item m-[7%] p-[5%] md:will-change-transform rounded-2xl border border-zinc-400 flex gap-7">
         <div
           className={cn(
-            'project-image bg-cover will-change-transform bg-center origin-center w-[100%] h-[100%] scale-100',
+            'project-image bg-cover will-change-transform bg-center origin-center w-[50%] h-[100%] scale-100 rounded-2xl ',
             { 'is-reveal': onScreen },
           )}
           style={{ backgroundImage: `url(${project.image})` }}
         ></div>
+        <div className="project-info flex flex-col justify-between py-9">
+          <h1 className="project-info-name  text-center md:text-left italic text-[4vw] text-bold text-white">
+            {project.name}
+          </h1>
+          <div className="flex gap-6">
+            <a href="#home" className="flex items-center gap-2 hover:underline">
+              VIEW PROJECT{' '}
+              <span>
+                <BsArrowUpRight className="text-2xl" />
+              </span>
+            </a>
+            <a
+              href="#sourceLink"
+              className="flex items-center gap-3 hover:underline"
+            >
+              VIEW SOURCE{' '}
+              <span>
+                <FaGithub className=" text-2xl" />
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
       <div className="hidden md:block" />
     </div>
