@@ -1,23 +1,15 @@
-.projects-wrapper {
-  
-}
-
-.project-info{
-  background-color: transparent
-}
-
 
 @media only screen and (min-device-width: 768px){
   .projects-wrapper {
     display: grid;
-    grid-template-columns: 20vw 1fr 200px;
+    grid-template-columns: 10vw 1fr 100px;
   }
 
-  .project-info{
+  /* .project-info{
     backdrop-filter: blur(17px) saturate(127%);
     -webkit-backdrop-filter: blur(17px) saturate(127%);
     background-color: rgba(0, 0, 0, 0.57);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
-  }
+  } */
 }
