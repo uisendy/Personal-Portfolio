@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import useOnScreen from '../../hooks/useOnScreen';
 import cn from 'classnames';
 import './projectlist.css';
-import { BsArrowUpRight } from 'react-icons/bs';
+import { BsArrowUpRightCircle } from 'react-icons/bs';
 import { FaGithub } from 'react-icons/fa';
 
 const ProjectList = ({ updateActiveImage, project, index }) => {
@@ -40,7 +40,7 @@ const ProjectList = ({ updateActiveImage, project, index }) => {
             <a href="#home" className="flex items-center gap-2 hover:underline">
               VIEW PROJECT{' '}
               <span>
-                <BsArrowUpRight className="text-2xl" />
+                <BsArrowUpRightCircle className="text-2xl" />
               </span>
             </a>
             <a
