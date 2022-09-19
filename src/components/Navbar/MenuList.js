@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MenuList = ({ menu, BsArrowUpRight }) => {
   return (
     <>
       <li className="flex">
-        <a
+        <Link
           className="links font-playFairSc uppercase text-5xl md:text-7xl flex item-centre hover:italic"
-          href="/about"
+          to={menu.link}
         >
-          {menu} <BsArrowUpRight className="arrow" />
-        </a>
+          {menu.name} <BsArrowUpRight className="arrow" />
+        </Link>
       </li>
     </>
   );

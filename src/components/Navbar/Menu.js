@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 import MenuList from './MenuList';
 import { BsArrowUpRight } from 'react-icons/bs';
@@ -28,7 +29,7 @@ const Menu = ({ menuList, isNavOpen, setIsNavOpen }) => {
                 {menuList.map((menu) => (
                   <MenuList
                     menu={menu}
-                    key={menu}
+                    key={menu.id}
                     BsArrowUpRight={BsArrowUpRight}
                   />
                 ))}
@@ -64,16 +65,16 @@ const Menu = ({ menuList, isNavOpen, setIsNavOpen }) => {
           </div>
         </div>
         <div className="">
-          <a
+          <Link
             className="z-[40] relative text-white text-2xl md:text-4xl"
-            href="/home"
+            to={'/'}
           >
             <img
               className="w-[50px] h-[50px]"
               src={LogoWhiteFrameless}
               alt="Logo"
             />
-          </a>
+          </Link>
         </div>
       </nav>
     </div>
