@@ -51,9 +51,9 @@ const Featured = () => {
       <div
         ref={ref}
         id="projects"
-        className="projects h-[40vh] md:h-[100vh] md:py-[10vh] md:w-[500%] flex flex-nowrap relative"
+        className="projects h-[40vh] md:h-[100vh] md:pt-[15vh] md:pb-[2vh] md:w-[500%] flex flex-nowrap relative"
       >
-        <div className="projects-counter absolute top-[5%] left-[100px] z-10 mix-blend-difference text-base text-white inline-block ">
+        <div className="projects-counter absolute top-[10%] left-[100px] z-10 mix-blend-difference text-base text-white inline-block ">
           <span>{activeImage}</span>
           <span className="divider bg-white w-[6.25vw] my-[7px] mx-[10px] h-[1px] inline-block" />
           <span>{projects.length}</span>
