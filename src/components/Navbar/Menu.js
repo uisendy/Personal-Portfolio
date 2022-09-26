@@ -8,7 +8,7 @@ import LogoWhiteFrameless from '../../Assets/Logo/LogoWhiteFrameless.png';
 
 const Menu = ({ menuList, isNavOpen, setIsNavOpen }) => {
   return (
-    <div className="py-5 px-8 bg-black w-[100vw]">
+    <div className="py-5 px-8 bg-black">
       <nav className="flex items-center justify-between pr-5">
         <div
           onClick={() => setIsNavOpen((open) => !open)}
@@ -23,7 +23,6 @@ const Menu = ({ menuList, isNavOpen, setIsNavOpen }) => {
         <div className="">
           <div className={isNavOpen ? 'showMenuNav' : 'hideMenuNav'}>
             {' '}
-            <div onClick={() => setIsNavOpen(false)}></div>
             <div className="nav-menu flex justify-center flex-col gap-10 w-[80%] mx-[auto]">
               <ul className="flex flex-col gap-10 md:gap-16 justify-between min-h-[250px] w-[80%] text-white text-6xl md:w-[80%] md:text-[6rem]">
                 {menuList.map((menu) => (
@@ -31,6 +30,8 @@ const Menu = ({ menuList, isNavOpen, setIsNavOpen }) => {
                     menu={menu}
                     key={menu.id}
                     BsArrowUpRight={BsArrowUpRight}
+                    isNavOpen={isNavOpen}
+                    setIsNavOpen={setIsNavOpen}
                   />
                 ))}
               </ul>
@@ -65,10 +66,7 @@ const Menu = ({ menuList, isNavOpen, setIsNavOpen }) => {
           </div>
         </div>
         <div className="">
-          <Link
-            className="z-[40] relative text-white text-2xl md:text-4xl"
-            to={'/'}
-          >
+          <Link className="text-white text-2xl md:text-4xl" to={'/'}>
             <img
               className="w-[50px] h-[50px]"
               src={LogoWhiteFrameless}
