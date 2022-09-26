@@ -1,6 +1,6 @@
 .secondary-cursor {
   z-index: 1000;
-  border-radius: 50% 0 50% 50%;
+  border-radius: 50%;
   pointer-events: none;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
@@ -18,10 +18,6 @@
   height: 150px;
 }
 
-.secondary-cursor {
-  width: 60px;
-  height: 60px;
-}
 @keyframes fadeIn {
   0% {
     opacity: 0;
