@@ -3,6 +3,12 @@
   .projects-wrapper {
     display: grid;
     grid-template-columns: 10vw 1fr 100px;
+    opacity: 0.5;
+  }
+
+  .projects-wrapper.is-reveal {
+    opacity: 1;
+    transform: scale(2);
   }
 
   /* .project-info{
