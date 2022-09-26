@@ -18,6 +18,10 @@ const Header = () => {
       type: 'lines',
       linesClass: 'lineChildrenDev',
     });
+    const contactSplit = new SplitText('.contact', {
+      type: 'lines',
+      linesClass: 'lineChildrenDev',
+    });
 
     const splitDesc = new SplitText('#header-desc', {
       type: 'lines',
@@ -28,14 +32,19 @@ const Header = () => {
       type: 'lines',
       linesClass: 'lineParents',
     });
+    new SplitText('.contact', {
+      type: 'lines',
+      linesClass: 'lineParents',
+    });
     new SplitText('#header-dev', {
       type: 'lines',
       linesClass: 'lineParents',
     });
-    new SplitText('#header-desc', {
-      type: 'words,chars',
-      linesClass: 'lineParents',
-    });
+
+    // new SplitText('#header-desc', {
+    //   type: 'words,chars',
+    //   linesClass: 'lineParents',
+    // });
     gsap.timeline().to(split.lines, {
       duration: 2,
       y: 0,
@@ -52,7 +61,13 @@ const Header = () => {
       stagger: 0.1,
       ease: 'power2',
     });
-
+    gsap.timeline().to(contactSplit.lines, {
+      duration: 4,
+      y: 0,
+      opacity: 1,
+      stagger: 0.1,
+      ease: 'power2',
+    });
     gsap.set('#header-dev', { perspective: 400 });
     gsap.timeline().from(splitDesc.lines, {
       duration: 3,
@@ -69,7 +84,10 @@ const Header = () => {
   }, []);
 
   return (
-    <section data-scroll-section className="h-[83.5vh] bg-black text-white">
+    <section
+      data-scroll-section
+      className="h-[83.5vh] bg-black text-white mb-20"
+    >
       <div className="flex flex-col gap-2 md:gap-0 justify-start pt-12 items-start w-[70%] h-[100%] my-0 mx-auto ">
         <h1
           id="header"
@@ -91,17 +109,23 @@ const Header = () => {
             </span>
           </p>
         </Link>
-        <p
+        <div
           id="header-desc"
-          className=" hidden uppercase font-montserrat text-left text-sm md:block md:absolute md:top-[70%] md:left-[60%] md:w-[32%]"
+          className=" hidden uppercase font-light md:flex md:flex-col md:gap-4 font-montserrat text-justify text-sm md:absolute md:top-[73%] md:left-[65%] md:w-[25%] opacity-50 hover:opacity-100 transition-all ease-in-out delay-150 duration-300"
         >
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum
-          eligendi, corrupti deserunt libero doloremque nihil! Illum illo,
-          officia impedit repellat enim tempora dolore iste non dolorum nostrum
-          omnis sed ad vero, in incidunt corrupti necessitatibus rerum. Possimus
-          unde sint perspiciatis?
-        </p>
-        <ScrollDown xPosition={'16%'} yPosition={'75%'} />
+          <small>
+            My objective is to represent the trustworthiness and goodwill of the
+            brand by developing an application that is valuable, optimally
+            functioning, and offers the best user experience.
+          </small>
+          <div className="flex gap-2 items-center">
+            <Link to="/a-sendyinieke" className=" text-white">
+              More
+            </Link>
+            <BsArrowUpRight />{' '}
+          </div>
+        </div>
+        <ScrollDown xPosition={'16%'} yPosition={'75%'} position="fixed" />
       </div>
     </section>
   );
