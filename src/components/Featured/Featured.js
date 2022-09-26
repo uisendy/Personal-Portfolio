@@ -6,7 +6,6 @@ import ProjectList from './ProjectList';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import cn from 'classnames';
-import ScrollDown from '../Header/ScrollDown';
 
 const Featured = () => {
   const [activeImage, setActiveImage] = useState(1);
@@ -28,7 +27,7 @@ const Featured = () => {
           pin: true,
           scrub: 1,
           snap: 1 / (sections.length - 1),
-          end: () => `+=${ref.current.offsetWidth}px`,
+          end: () => `+=${ref.current?.offsetWidth}`,
           pinSpacing: true,
         },
       });
