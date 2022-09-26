@@ -3,8 +3,9 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import SplitText from '../../utils/split3.min.js';
 import './header.css';
-import ScrollDown from './ScrollDown.js';
+import ScrollDown from '../ScrollDownIcon/ScrollDown.js';
 import { BsArrowUpRight } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   useEffect(() => {
@@ -17,11 +18,6 @@ const Header = () => {
       type: 'lines',
       linesClass: 'lineChildrenDev',
     });
-
-    // const splitCon = new SplitText('.contact-me', {
-    //   type: 'lines',
-    //   linesClass: 'lineChildrenCon',
-    // });
 
     const splitDesc = new SplitText('#header-desc', {
       type: 'lines',
@@ -36,23 +32,20 @@ const Header = () => {
       type: 'lines',
       linesClass: 'lineParents',
     });
-    // new SplitText('.contact', {
-    //   type: 'lines',
-    //   linesClass: 'lineParents',
-    // });
     new SplitText('#header-desc', {
       type: 'words,chars',
       linesClass: 'lineParents',
     });
-    gsap.to(split.lines, {
+    gsap.timeline().to(split.lines, {
       duration: 2,
       y: 0,
       opacity: 1,
       stagger: 0.1,
       ease: 'power2',
     });
+    gsap.set('#header', { perspective: 400 });
 
-    gsap.to(splitPos.lines, {
+    gsap.timeline().to(splitPos.lines, {
       duration: 3,
       y: 0,
       opacity: 1,
@@ -60,14 +53,7 @@ const Header = () => {
       ease: 'power2',
     });
 
-    // gsap.to(splitCon.lines, {
-    //   duration: 3,
-    //   y: 0,
-    //   opacity: 1,
-    //   stagger: 0.1,
-    //   ease: 'power2',
-    // });
-
+    gsap.set('#header-dev', { perspective: 400 });
     gsap.timeline().from(splitDesc.lines, {
       duration: 3,
       opacity: 0,
@@ -78,14 +64,12 @@ const Header = () => {
       ease: 'back',
       stagger: 0.01,
     });
+
     gsap.set('#header-desc', { perspective: 400 });
   }, []);
 
   return (
-    <section
-      data-scroll-section
-      className="h-[83.5vh] bg-black text-white w-[100vw]"
-    >
+    <section data-scroll-section className="h-[83.5vh] bg-black text-white">
       <div className="flex flex-col gap-2 md:gap-0 justify-start pt-12 items-start w-[70%] h-[100%] my-0 mx-auto ">
         <h1
           id="header"
@@ -99,16 +83,14 @@ const Header = () => {
         >
           Web Developer
         </p>
-        <div className="contact pt-10 px-4">
-          <a href="/contact">
-            <p className="contact-me items-center gap-2 z-[40] hover:underline hover:italic text-white font-playFairSc text-xl flex md:text-3xl">
-              CONTACT{' '}
-              <span>
-                <BsArrowUpRight />
-              </span>
-            </p>
-          </a>
-        </div>
+        <Link className="contact pt-10 px-2">
+          <p className="contact-me items-center gap-2 font-playFairSc text-xl flex md:text-3xl">
+            CONTACT{' '}
+            <span>
+              <BsArrowUpRight />
+            </span>
+          </p>
+        </Link>
         <p
           id="header-desc"
           className=" hidden uppercase font-montserrat text-left text-sm md:block md:absolute md:top-[70%] md:left-[60%] md:w-[32%]"
@@ -119,7 +101,7 @@ const Header = () => {
           omnis sed ad vero, in incidunt corrupti necessitatibus rerum. Possimus
           unde sint perspiciatis?
         </p>
-        <ScrollDown />
+        <ScrollDown xPosition={'16%'} yPosition={'75%'} />
       </div>
     </section>
   );
