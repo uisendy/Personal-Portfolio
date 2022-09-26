@@ -271,16 +271,15 @@ const Footer = () => {
           </h2>
           <a
             id="mail"
-            className="flex flex-col justify-center text-center text-2xl"
+            className="flex flex-col justify-center text-center text-2xl py-5"
             href="mailto:ini.e.sendy@gmail.com"
           >
             ini.e.sendy@gmail.com
-            <div className=" w-[250px] pb-2 mx-auto border-b-[3px] " />
           </a>
         </div>
         <div className="flex flex-wrap md:flex-col md:w-full">
           <a
-            className="transition hover:opacity-75 hover:bg-slate-300 w-[50%] md:w-full border-[1px] md:border-x-0 flex items-center justify-center py-12"
+            className="transition hover:mix-blend-difference bg-black w-[50%] md:w-full border-[1px] md:border-x-0 flex items-center justify-center py-12"
             href="http://github.com/uisendy"
             target="_blank"
             rel="noreferrer"
@@ -288,7 +287,7 @@ const Footer = () => {
             <FaGithub className="text-4xl text-white" />
           </a>
           <a
-            className="transition hover:opacity-75 hover:bg-slate-300 w-[50%] md:w-full border-[1px] md:border-x-0 flex items-center justify-center py-12"
+            className="transition hover:mix-blend-difference bg-black w-[50%] md:w-full border-[1px] md:border-x-0 flex items-center justify-center py-12"
             href="https://www.linkedin.com/in/inieke-sendy-129b57ab/"
             target="_blank"
             rel="noreferrer"
@@ -296,7 +295,7 @@ const Footer = () => {
             <FaLinkedinIn className="text-4xl text-white" />
           </a>
           <a
-            className="transition hover:opacity-75 hover:bg-slate-300 w-[50%] md:w-full border-[1px] md:border-x-0 flex items-center justify-center py-12"
+            className="transition hover:mix-blend-difference bg-black w-[50%] md:w-full border-[1px] md:border-x-0 flex items-center justify-center py-12"
             href="https://twitter.com/SInieke/"
             target="_blank"
             rel="noreferrer"
@@ -305,7 +304,7 @@ const Footer = () => {
           </a>
 
           <a
-            className="transition hover:opacity-75 w-[50%] md:w-full border-[1px] md:border-x-0 flex flex-col md:flex-row md:gap-5 items-center justify-center py-12 md:border-b-0"
+            className="transition hover:mix-blend-difference w-[50%] md:w-full border-[1px] md:border-x-0 flex flex-col md:flex-row md:gap-5 items-center justify-center py-12 md:border-b-0"
             href="https://twitter.com/SInieke/"
             target="_blank"
             rel="noreferrer"
