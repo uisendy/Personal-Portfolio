@@ -1,8 +1,8 @@
-.grid{
+/* .grid{
   display: grid;
   grid-template-columns: 2fr 1fr 3fr 1fr;
   align-items: center;
-}
+} */
 
 img{
   clip-path: inset(0% 0% 0% 0%);
