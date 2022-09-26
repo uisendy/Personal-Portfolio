@@ -1,11 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import CustomCursor from './CustomCursor';
+import CustomCursor from './CustomCursor/CustomCursor';
 import Navbar from './components/Navbar/Navbar';
-import Header from './components/Header/Header';
-import Featured from './components/Featured/Featured';
-// import About from "./components/About/About";
-import RecentProject from './components/RecentProject/RecentProject';
-import Footer from './components/Footer/Footer';
+import { Outlet } from 'react-router-dom';
 
 import useLocoScroll from './hooks/useLocoScroll';
 function App() {
@@ -49,9 +45,7 @@ function App() {
           data-scroll-container
         >
           <Navbar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
-          <Header />
-          <Featured />
-          <Footer />
+          <Outlet />
         </div>
       )}
     </>
