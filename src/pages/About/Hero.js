@@ -3,7 +3,10 @@ import ScrollDown from '../../components/ScrollDownIcon/ScrollDown';
 
 const Hero = () => {
   return (
-    <div className=" flex flex-col pt-[2%] w-[87%] mx-[auto] my-0 h-[89vh]">
+    <div
+      className=" flex flex-col pt-[2%] w-[87%] mx-[auto] my-0 mb-24 h-[89vh]"
+      data-scroll-section
+    >
       {' '}
       <h1 className=" text-5xl md:text-[7rem] ">
         I am{' '}
@@ -12,7 +15,7 @@ const Hero = () => {
         Jr. Web Developer, <br />
         <span className="">Aspiring Full-Stack Developer</span>
       </h1>
-      <ScrollDown xPosition={'92%'} yPosition={'80%'} />
+      <ScrollDown xPosition={'92%'} yPosition={'80%'} position="" />
     </div>
   );
 };
