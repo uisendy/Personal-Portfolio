@@ -8,7 +8,7 @@ import { FaGithub } from 'react-icons/fa';
 const ProjectList = ({ updateActiveImage, project, index }) => {
   const ref = useRef(null);
 
-  const onScreen = useOnScreen(ref, 0.3);
+  const onScreen = useOnScreen(ref, 0.8);
 
   useEffect(() => {
     if (onScreen) {
@@ -24,7 +24,7 @@ const ProjectList = ({ updateActiveImage, project, index }) => {
       })}
     >
       <div className="hidden md:block " />
-      <div className=" project-item m-[7%] p-[5%] md:will-change-transform rounded-2xl border border-zinc-400 flex gap-7">
+      <div className=" project-item my-[5%] mx-[7%] p-[5%] md:will-change-transform rounded-2xl border border-zinc-400 flex gap-7">
         <div
           className={cn(
             'project-image bg-cover will-change-transform bg-center origin-center w-[50%] h-[100%] scale-100 rounded-2xl ',
