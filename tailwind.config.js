@@ -1,14 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {},
     fontFamily: {
-      aboreto: ["Aboreto"],
-      playFairSc: ["Playfair Display SC"],
-      ubuntu: ["Ubuntu"],
-      montserrat: ["montserrat"],
+      aboreto: ['Aboreto'],
+      playFairSc: ['Playfair Display SC'],
+      ubuntu: ['Ubuntu'],
+      montserrat: ['montserrat'],
+      cinzel: ['Cinzel'],
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require('@tailwindcss/forms')],
 };
