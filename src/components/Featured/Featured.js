@@ -5,11 +5,9 @@ import './featured.css';
 import ProjectList from './ProjectList';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import cn from 'classnames';
 
 const Featured = () => {
   const [activeImage, setActiveImage] = useState(1);
-  const [reveal, setReveal] = useState(false);
   const ref = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
@@ -35,17 +33,13 @@ const Featured = () => {
       ScrollTrigger.refresh();
     });
   }, []);
+
   return (
     <section
       data-scroll-section
-      className={cn(' text-white bg-black overflow-hidden', {
-        'is-reveal': reveal,
-      })}
+      className=" text-white bg-black overflow-hidden"
     >
-      <SectionHeader
-        title={'Recent Projects'}
-        subtitle={'You can go through my recently completed projects'}
-      />
+      <SectionHeader title={'Recently'} subtitle={'Completed Projects'} />
 
       <div
         ref={ref}
