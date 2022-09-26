@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouteError } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { BsArrowUpRight } from 'react-icons/bs';
+import { BsArrowUpLeft } from 'react-icons/bs';
 const ErrorPage = () => {
   const error = useRouteError();
 
@@ -20,7 +20,7 @@ const ErrorPage = () => {
         className=" fixed top-10 left-10 uppercase hover:underline hover:italic flex gap-3 text-3xl items-center"
       >
         {' '}
-        Go Back Home <BsArrowUpRight className="text-3xl" />
+        <BsArrowUpLeft className="text-3xl" /> Go Back Home
       </Link>
     </div>
   );
