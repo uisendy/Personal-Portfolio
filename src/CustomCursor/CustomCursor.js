@@ -13,14 +13,12 @@ const CustomCursor = () => {
   });
 
   useEffect(() => {
-    let size;
+    let size = 50;
     document.addEventListener('mousemove', (event) => {
       let path = event.composedPath();
       if (path.some((x) => x.tagName == 'A')) {
         size = 150;
-      } else size = 40;
-
-      console.log(size);
+      } else size = 50;
 
       secondaryCursor.current.style.width = `${size}px`;
       secondaryCursor.current.style.height = `${size}px`;
