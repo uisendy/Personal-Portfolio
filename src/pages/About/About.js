@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import ScrollToTop from '../../components/ScrollDownIcon/ScrollToTop';
 import Skills from './Skills';
+import Experience from './Experience';
 
 const About = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -17,6 +18,7 @@ const About = () => {
       <Hero />
       <Description />
       <Skills />
+      <Experience />
     </section>
   );
 };
