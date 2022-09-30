@@ -1,5 +1,4 @@
 import React from 'react';
-import { MdOutlineCode } from 'react-icons/md';
 
 const SectionHeader = ({ title, subtitle }) => {
   return (
