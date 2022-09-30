@@ -1,34 +1,15 @@
 import React, { useState } from 'react';
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
-import skillsData from '../../data/skillsData';
-import { BiDownArrow } from 'react-icons/bi';
-import './about.css';
+import { BsArrowDown } from 'react-icons/bs';
+import dataSet from '../../data/DataFile';
+import ListItems from '../../components/ListItems';
 
 const Skills = () => {
   const [openLang, setOpenLang] = useState(false);
   const [openTools, setOpenTools] = useState(false);
   const [openProd, setOpenProd] = useState(false);
 
-  const { languages, myTools, myProductions } = skillsData;
-
-  const SkillsItems = ({ skills }) => {
-    return (
-      <ul className="flex flex-col gap-2">
-        {skills.map((skill) => (
-          <li key={skill.id}>
-            <h2 className=" opacity-50 text-2xl text-white font-montserrat uppercase">
-              {skill.heading}
-            </h2>
-            <ul className="text-2xl text-white font-montserrat pb-5">
-              {skill.items.map((item) => (
-                <li key={item.id}>{item.item}</li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
-    );
-  };
+  const { languages, myTools, myProductions } = dataSet.skillsSet;
 
   return (
     <div data-scroll-section className=" h-full">
@@ -43,11 +24,11 @@ const Skills = () => {
               <h3 className=" font-montserrat font-bold pb-8 text-3xl">
                 Language
               </h3>
-              <BiDownArrow
+              <BsArrowDown
                 className=" text-3xl transition ease-in-out delay-150 duration-300"
                 style={
                   !openLang
-                    ? { transform: 'rotate(-180deg)', transition: 'all' }
+                    ? { transform: 'rotate(-180deg)' }
                     : { transform: 'rotate(0)' }
                 }
               />
@@ -59,7 +40,7 @@ const Skills = () => {
                   ? { display: 'flex', transition: 'all' }
                   : { display: 'none' }
               }
-              className="transition-all ease-in-out delay-150 duration-300 pb-7"
+              className="pb-7"
             >
               <ul className="flex flex-col gap-4 w-[90%]">
                 {languages.map((skill) => (
@@ -80,8 +61,12 @@ const Skills = () => {
                       min="0"
                       step="2"
                       id="myRange"
-                      className=" w-full h-0.5 bg-slate-400 outline-none appearance-none col-span-7"
+                      className=" w-full h-0.5 bg-slate-400 outline-none appearance-none col-span-6 opacity-50"
                     />
+                    <p className="font-montserrat font-thin">
+                      {skill.progress}
+                      {'%'}
+                    </p>
                   </li>
                 ))}
               </ul>
@@ -97,7 +82,7 @@ const Skills = () => {
               <h3 className=" font-montserrat font-bold pb-8 text-3xl">
                 My Tools
               </h3>
-              <BiDownArrow
+              <BsArrowDown
                 className=" text-3xl transition-all ease-in-out delay-150 duration-300"
                 style={
                   openTools
@@ -107,14 +92,10 @@ const Skills = () => {
               />
             </div>
             <div
-              style={
-                openTools
-                  ? { display: 'flex', transition: 'all' }
-                  : { display: 'none' }
-              }
+              style={openTools ? { display: 'flex' } : { display: 'none' }}
               className="transition-all ease-in-out delay-150 duration-300"
             >
-              <SkillsItems skills={myTools} />
+              <ListItems dataset={myTools} />
             </div>
           </div>
         </div>
@@ -127,24 +108,20 @@ const Skills = () => {
               <h3 className=" font-montserrat font-bold pb-8 text-3xl">
                 Productions
               </h3>
-              <BiDownArrow
+              <BsArrowDown
                 className=" text-3xl transition-all ease-in-out delay-150 duration-300"
                 style={
                   openProd
-                    ? { transform: 'rotate(-180deg)', transition: 'all' }
+                    ? { transform: 'rotate(-180deg)' }
                     : { transform: 'rotate(0)' }
                 }
               />
             </div>
             <div
-              style={
-                openProd
-                  ? { display: 'flex', transition: 'all' }
-                  : { display: 'none' }
-              }
+              style={openProd ? { display: 'flex' } : { display: 'none' }}
               className="transition-all ease-in-out delay-150 duration-300"
             >
-              <SkillsItems skills={myProductions} />
+              <ListItems dataset={myProductions} />
             </div>
           </div>
         </div>
