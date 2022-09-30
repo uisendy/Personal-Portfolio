@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import { Outlet } from 'react-router-dom';
-import ScrollToTop from './components/ScrollDownIcon/ScrollToTop';
 
 import useLocoScroll from './hooks/useLocoScroll';
 function App() {
