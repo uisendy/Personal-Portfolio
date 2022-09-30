@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './style.css';
 const CustomCursor = () => {
   const secondaryCursor = useRef(null);
@@ -16,7 +16,7 @@ const CustomCursor = () => {
     let size = 50;
     document.addEventListener('mousemove', (event) => {
       let path = event.composedPath();
-      if (path.some((x) => x.tagName == 'A')) {
+      if (path.some((x) => x.tagName === 'A')) {
         size = 150;
       } else size = 50;
 
