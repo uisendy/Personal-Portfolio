@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import { Outlet } from 'react-router-dom';
-
 import useLocoScroll from './hooks/useLocoScroll';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
+import Loader from './components/Loader';
 function App() {
-  const [preLoader, setPreLoader] = useState(false);
+  gsap.registerPlugin(ScrollTrigger);
+  const [preLoader, setPreLoader] = useState(true);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   useLocoScroll(!preLoader);
@@ -18,6 +21,7 @@ function App() {
   };
 
   useEffect(() => {
+    ScrollTrigger.refresh();
     id.current = window.setInterval(() => {
       setTimer((timer) => timer - 1);
     }, 1000);
@@ -33,13 +37,18 @@ function App() {
   return (
     <>
       {preLoader ? (
-        <div className="loader-warper fixed flex flex-col justify-center items-center top-0 right-0 bottom-0 left-0 bg-black">
-          <h1 className="text-white font-playFairSc ">Welcome</h1>
-        </div>
+        <Loader />
       ) : (
         <div
-          className={isNavOpen ? 'main-container nav__open' : 'main-container'}
+          className={
+            isNavOpen ? 'main__container nav__open' : 'main__container'
+          }
           id="main-container"
+          style={
+            isNavOpen
+              ? { height: '100vh', overflow: 'hidden', padding: '0' }
+              : { height: 'auto' }
+          }
           data-scroll-container
         >
           <Navbar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
