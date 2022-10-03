@@ -18,6 +18,8 @@ const CustomCursor = () => {
       let path = event.composedPath();
       if (path.some((x) => x.tagName === 'A')) {
         size = 150;
+      } else if (path.some((x) => x.id === 'more__info')) {
+        size = 400;
       } else size = 50;
 
       secondaryCursor.current.style.width = `${size}px`;
