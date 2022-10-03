@@ -3,12 +3,15 @@ import SectionHeader from '../SectionHeader/SectionHeader';
 import projects from '../../data/PortfolioImage';
 import './featured.css';
 import ProjectList from './ProjectList';
+import ProjectListMobile from './ProjectListMobile';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { container } from 'webpack';
 
 const Featured = () => {
   const [activeImage, setActiveImage] = useState(1);
   const ref = useRef(null);
+  const refMobile = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -32,19 +35,42 @@ const Featured = () => {
 
       ScrollTrigger.refresh();
     });
+    setTimeout(() => {
+      gsap.utils.toArray('.project__wrapper__mobile').forEach((wrapper, i) => {
+        ScrollTrigger.create({
+          trigger: wrapper,
+          pin: true,
+          pinSpacing: false,
+          snap: 1,
+          scrub: 1,
+        });
+        gsap.from(wrapper.children, {
+          y: 50,
+          scrollTrigger: {
+            trigger: wrapper,
+            start: 'top center',
+            end: 'top top',
+            toggleActions: 'play none reverse reset',
+          },
+        });
+      });
+
+      ScrollTrigger.refresh();
+    });
   }, []);
 
   return (
     <section
       data-scroll-section
-      className=" text-white bg-black overflow-hidden"
+      className=" text-white bg-black overflow-hidden mt-32 lg:mt-60"
     >
       <SectionHeader title={'Recently'} subtitle={'Completed Projects'} />
 
+      {/* Desktop Version */}
       <div
         ref={ref}
         id="projects"
-        className="projects h-[40vh] md:h-[100vh] md:pt-[15vh] md:pb-[2vh] md:w-[500%] flex flex-nowrap relative"
+        className="projects hidden h-[80vh] md:h-[100vh] md:pt-[15vh] md:pb-[2vh] md:w-[500%] lg:flex flex-nowrap relative"
       >
         <div className="projects-counter absolute top-[10%] left-[100px] z-10 mix-blend-difference text-base text-white inline-block ">
           <span>{activeImage}</span>
@@ -53,6 +79,22 @@ const Featured = () => {
         </div>
         {projects.map((project, index) => (
           <ProjectList
+            key={project.id}
+            project={project}
+            index={index}
+            activeImage={activeImage}
+            updateActiveImage={(index) => setActiveImage(index + 1)}
+          />
+        ))}
+      </div>
+      {/* Mobile Version */}
+      <div
+        ref={refMobile}
+        id="projects__mobile"
+        className="projects__mobile lg:hidden "
+      >
+        {projects.map((project, index) => (
+          <ProjectListMobile
             key={project.id}
             project={project}
             index={index}
