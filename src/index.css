@@ -12,12 +12,15 @@
   }
 }
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 body{
   background-color: black;
   cursor: none;
 }
 
 a:hover{
-  text-decoration: underline;
   cursor: none;
 }

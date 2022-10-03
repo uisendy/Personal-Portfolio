@@ -3,19 +3,26 @@ import ScrollDown from '../../components/ScrollDownIcon/ScrollDown';
 
 const Hero = () => {
   return (
-    <div
-      className=" flex flex-col pt-[2%] w-[87%] mx-[auto] my-0 mb-24 h-[89vh]"
-      data-scroll-section
-    >
-      {' '}
-      <h1 className=" text-5xl md:text-[7rem] ">
-        I am{' '}
-        <span className="underline text-orange-200 italic">Sendy Inieke</span>{' '}
-        <br />
-        Jr. Web Developer, <br />
-        <span className="">Aspiring Full-Stack Developer</span>
-      </h1>
-      <ScrollDown xPosition={'92%'} yPosition={'80%'} position="" />
+    <div className="relative mb-10">
+      <div
+        className=" flex flex-col justify-center lg:justify-start pt-[2%] w-[87%] mx-[auto] my-0 h-[89vh]"
+        data-scroll-section
+      >
+        {' '}
+        <h2 className=" text-5xl md:text-7xl lg:text-[7rem] mb-8">
+          I am{' '}
+          <span className=" underline-offset-8 opacity-50 italic">
+            Sendy Inieke
+          </span>{' '}
+        </h2>
+        <h3 className=" text-4xl md:text-5xl md:text-[7rem] mb-8">
+          A FULL-STACK <br /> WEB DEVELOPER <br />
+        </h3>
+        <p className=" font-montserrat font-extralight opacity-70 lg:text-2xl">
+          Chess Player, Researcher, Energy Enthusiast
+        </p>
+      </div>
+      <ScrollDown xPosition={'50%'} yPosition={'85%'} position="absolute" />
     </div>
   );
 };

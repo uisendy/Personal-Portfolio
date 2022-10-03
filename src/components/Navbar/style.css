@@ -46,11 +46,12 @@
   top: 0;
   left: 0;
   background: black;
-  z-index: 100;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .arrow{
@@ -63,4 +64,8 @@
 
 .links:hover > .arrow{
   opacity: 1;
+}
+
+.noScroll{
+  overflow: hidden;
 }
