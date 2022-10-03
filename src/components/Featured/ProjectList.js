@@ -19,21 +19,24 @@ const ProjectList = ({ updateActiveImage, project, index }) => {
   return (
     <div
       ref={ref}
-      className={cn('projects-wrapper aspect-video h-[100%] w-[100vw]', {
-        'is-reveal': onScreen,
-      })}
+      className={cn(
+        'projects-wrapper project__wrapper__mobile aspect-video h-[100%] w-[100vw]',
+        {
+          'is-reveal': onScreen,
+        },
+      )}
     >
       <div className="hidden md:block " />
-      <div className=" project-item my-[5%] mx-[7%] p-[5%] md:will-change-transform rounded-2xl border border-zinc-400 flex gap-7">
+      <div className=" project-item my-[5%] mx-[7%] p-[5%] md:will-change-transform rounded lg:rounded-2xl border border-zinc-400 flex flex-col lg:flex-row gap-7">
         <div
           className={cn(
-            'project-image bg-cover will-change-transform bg-center origin-center w-[50%] h-[100%] scale-100 rounded-2xl ',
+            'project-image bg-cover will-change-transform bg-center origin-center w-[50%] h-[100%] scale-100 lg:rounded-xl ',
             { 'is-reveal': onScreen },
           )}
           style={{ backgroundImage: `url(${project.image})` }}
         ></div>
-        <div className="project-info flex flex-col justify-between py-9">
-          <h1 className="project-info-name  text-center md:text-left italic text-[4vw] text-bold text-white">
+        <div className=" font-montserrat font-extralight project-info flex flex-col justify-between py-9">
+          <h1 className="project-info-name  text-center md:text-left text-[4vw] text-bold text-white">
             {project.name}
           </h1>
           <div className="flex gap-6">
