@@ -1,24 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
 import { BsArrowDown } from 'react-icons/bs';
 import dataSet from '../../data/DataFile';
-import ListItems from '../../components/ListItems';
+import SkillsList from '../../components/SkillsList';
 
 const Skills = () => {
+  gsap.registerPlugin(ScrollTrigger);
   const [openLang, setOpenLang] = useState(false);
   const [openTools, setOpenTools] = useState(false);
   const [openProd, setOpenProd] = useState(false);
 
   const { languages, myTools, myProductions } = dataSet.skillsSet;
 
+  useEffect(() => {
+    ScrollTrigger.refresh();
+  }, [openLang, openTools, openProd]);
+
   return (
     <div data-scroll-section className=" h-full">
       <SectionHeader title={'My Skills'} subtitle={'& Proficiency'} />
-      <div className="skills__section__wrapper pb-32 pt-16 grid grid-cols-3 gap-[6.5%] min-h-full">
+      <div className="skills__section__wrapper pb-20 pt-10 grid lg:grid-cols-3 gap-[6.5%] min-h-full">
         <div className="skills__language">
           <div className="border-y border-solid border-y-white pt-8">
             <div
-              className="flex justify-between"
+              className="flex justify-between border-b border-solid border-b-gray-700"
               onClick={() => setOpenLang((openLang) => !openLang)}
             >
               <h3 className=" font-montserrat font-bold pb-8 text-3xl">
@@ -40,7 +47,7 @@ const Skills = () => {
                   ? { display: 'flex', transition: 'all' }
                   : { display: 'none' }
               }
-              className="pb-7"
+              className="pb-7 pt-5"
             >
               <ul className="flex flex-col gap-4 w-[90%]">
                 {languages.map((skill) => (
@@ -76,7 +83,7 @@ const Skills = () => {
         <div className="skills__tools">
           <div className=" border-y border-solid border-y-white pt-8">
             <div
-              className="flex justify-between"
+              className="flex justify-between border-b border-solid border-b-gray-700"
               onClick={() => setOpenTools((openTools) => !openTools)}
             >
               <h3 className=" font-montserrat font-bold pb-8 text-3xl">
@@ -93,19 +100,19 @@ const Skills = () => {
             </div>
             <div
               style={openTools ? { display: 'flex' } : { display: 'none' }}
-              className="transition-all ease-in-out delay-150 duration-300"
+              className="transition-all ease-in-out delay-150 duration-300 pt-5"
             >
-              <ListItems dataset={myTools} />
+              <SkillsList dataset={myTools} />
             </div>
           </div>
         </div>
         <div className="skills__production">
           <div className=" border-y border-solid border-y-white pt-8">
             <div
-              className="flex justify-between"
+              className="flex justify-between border-b border-solid border-b-gray-700"
               onClick={() => setOpenProd((openProd) => !openProd)}
             >
-              <h3 className=" font-montserrat font-bold pb-8 text-3xl">
+              <h3 className=" font-montserrat font-bold pb-8 text-3xl ">
                 Productions
               </h3>
               <BsArrowDown
@@ -119,9 +126,9 @@ const Skills = () => {
             </div>
             <div
               style={openProd ? { display: 'flex' } : { display: 'none' }}
-              className="transition-all ease-in-out delay-150 duration-300"
+              className="transition-all ease-in-out delay-150 duration-300 pt-5"
             >
-              <ListItems dataset={myProductions} />
+              <SkillsList dataset={myProductions} />
             </div>
           </div>
         </div>
